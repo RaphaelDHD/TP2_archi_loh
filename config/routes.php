@@ -52,6 +52,19 @@ return static function (RouteBuilder $routes) {
          */
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'index']);
 
+
+        $builder->connect('/edit', ['controller' =>'tickets', 'action' => 'edit']);
+        $builder->connect('/form-edit', ['controller' =>'tickets', 'action' => 'edit']);
+        $builder->connect('/add', ['controller' =>'tickets', 'action' => 'add']);
+        $builder->connect('/delete', ['controller' =>'tickets', 'action' => 'delete']);
+        $builder->connect('/todo-list', ['controller' =>'tickets', 'action' => 'index']);
+
+        $builder->connect('/login', ['controller' => 'users', 'action' => 'login'] );
+        $builder->connect('/logout', ['controller' => 'users', 'action' => 'logout'] );
+
+
+
+
         /*
          * ...and connect the rest of 'Pages' controller's URLs.
          */
