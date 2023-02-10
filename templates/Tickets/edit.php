@@ -13,7 +13,7 @@
               <div class="panel-body">
                 <div class="task-content">
                 <?php
-                  echo $form->open(['class' => 'form-horizontal style-form']);
+                  echo $this->Form->create(['class' => 'form-horizontal style-form']);
                 ?>
                     <div class="form-group">
                       <?php 

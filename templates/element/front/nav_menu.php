@@ -4,8 +4,8 @@
             <p class="centered">
                 <?=
                 $this->Html->link(
-                    '<img src="img/users/ '. ($_SESSION['user']['id'] ?? 1) . '.jpg" class="img-circle" width="80">',
-                    ['controller' => 'Pages', 'action' => '/'],
+                    '<img src="img/users/' . ($_SESSION['user']['id'] ?? 1) . '.jpg" class="img-circle" width="80">',
+                    '#',
                     ['escapeTitle' => false]
                 )
 
@@ -15,16 +15,23 @@
                 <?= $_SESSION['user']['name'] ?? "" ?>
             </h5>
             <li class="mt">
-                <a href="/">
-                    <i class="fa fa-dashboard"></i>
-                    <span>Tableau de bord</span>
-                </a>
+
+                <?= $this->Html->link(
+                    '<i class="fa fa-dashboard"></i>
+                        <span>Tableau de bord</span>',
+                    '/',
+                    ['escapeTitle' => false]
+                );
+                ?>
             </li>
             <li class="mt">
-                <a href="/todo-list">
-                    <i class="fa fa-list"></i>
-                    <span>Les tickets</span>
-                </a>
+                <?= $this->Html->link(
+                    '<i class="fa fa-list"></i>
+                            <span>Les tickets</span>',
+                    '/todo-list',
+                    ['escapeTitle' => false]
+                );
+                ?>
             </li>
         </ul>
     </div>

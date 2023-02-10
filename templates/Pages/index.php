@@ -30,7 +30,13 @@
                                 </ul>
                             </div>
                             <div class=" add-task-row">
-                                <a class="btn btn-success btn-sm pull-left" href="/form-edit">Ajouter un nouveau ticket</a>
+                                <?=
+                                $this->Html->link(
+                                    'Ajouter un nouveau ticket',
+                                    ['controller' => 'Tickets', 'action' => 'add'],
+                                    ['class' => 'btn btn-success btn-sm pull-left']
+                                );
+                                ?>
                                 <a class="btn btn-default btn-sm pull-right" href="/todo-list">Voir tous les tickets</a>
                             </div>
                         </div>

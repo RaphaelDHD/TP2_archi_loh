@@ -8,7 +8,8 @@ class TicketsController extends AppController {
     }
 
     public function add(){
-
+        $ticket = $this->Tickets->newEmptyEntity();
+        $this->set(compact('ticket'));
     }
 
     public function delete(){
