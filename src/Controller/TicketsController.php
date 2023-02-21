@@ -10,6 +10,7 @@ class TicketsController extends AppController {
         ->where(['id_users' => ($_SESSION['user']['id'] ?? 1)])
         ->all();
         $this->set(compact('tickets'));
+        $this->Authentication->allowUnauthenticated(['view', 'index']);
     }
 
     public function add(){
