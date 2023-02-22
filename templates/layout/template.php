@@ -21,10 +21,7 @@
 
 </head>
 
-<?= $this->element('front/header'); ?>
-<?= $this->element('front/nav_menu') ?>
 <?= $this->fetch('content') ?>
-<?= $this->element('front/footer') ?>
 <?= $this->Flash->render() ?>
 
 

@@ -2,18 +2,18 @@
     <div id="login-page">
         <div class="container">
             <?php
-            echo $this->Form->create($user , ['class' => 'form-login']);
+            echo $this->Form->create(null , ['class' => 'form-login']);
             ?>
             <h2 class="form-login-heading">Connexion</h2>
             <div class="login-wrap">
                 <?php
-                echo $this->Form->control('login', [
-                    'type' => 'text',
+                echo $this->Form->control('email', [
+                    'type' => 'email',
                     'class' => 'form-control',
                     'id' => 'nameInput',
-                    'placeholder' => "Nom d'utilisateur",
+                    'placeholder' => "",
                     'label' => [
-                        'text' => 'Login'
+                        'text' => 'Email'
                     ]
                 ]);
 

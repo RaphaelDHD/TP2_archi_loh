@@ -13,17 +13,13 @@
               <div class="panel-body">
                 <div class="task-content">
                 <?php
-                  echo $this->Form->create(['class' => 'form-horizontal style-form']);
+                  echo $this->Form->create($ticket , ['class' => 'form-horizontal style-form']);
                 ?>
                     <div class="form-group">
-                      <?php 
-                        echo $form->label("Titre du ticket", ['for' => 'inputTitle', 'class' => 'col-sm-2 col-sm-2 control-label']);
-                      ?>
-                      <div class="col-sm-10">
+                    
                         <?php
-                          echo $form->input("title", ['type' => 'text', 'class' => 'form-control', 'id' => 'inputTitle', 'name' => 'title', 'label' => false]);
+                          echo $form->control("title", [ 'class' => 'form-control', 'label' => 'titre']);
                         ?>
-                      </div>
                     </div>
                     <div class="form-group">
                       <?php 
