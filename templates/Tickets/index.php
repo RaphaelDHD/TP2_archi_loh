@@ -36,13 +36,18 @@
                                                     <?php
                                                     endif;
                                                     ?>
-                                                    <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                                    <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></a>
+                                                    <?= $this->Html->link('',
+                                                    ['action' => 'edit'],
+                                                    ['class' => 'btn btn-primary btn-xs fa fa-pencil', 'escapeTitle' => false]
+                                                    ) ?>
+                                                    <?= $this->Form->postLink('',
+                                                    ['action' => 'delete', $ticket->id],
+                                                    ['class' => 'btn btn-danger btn-xs fa fa-trash-o' , 'escapeTitle' => false, 'confirm' => 'Etes vous sur ?']) ?>
                                                 </div>
                                         </div>
                                     </li>
                                 <?php
-                                    endforeach;
+                                            endforeach;
                                 ?>
                                 </ul>
                             </div>
