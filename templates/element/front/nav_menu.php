@@ -4,7 +4,7 @@
             <p class="centered">
                 <?=
                 $this->Html->link(
-                    '<img src="img/users/' . ($_SESSION['user']['id'] ?? 1) . '.jpg" class="img-circle" width="80">',
+                    '<img src="img/users/' . ($this->request->getSession()->read('Auth.profile_pictures') ?? 1) . '.jpg" class="img-circle" width="80">',
                     '#',
                     ['escapeTitle' => false]
                 )

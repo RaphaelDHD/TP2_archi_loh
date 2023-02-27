@@ -30,7 +30,7 @@
                                                         <?= $this->Html->link(
                                                             '',
                                                             ['action' => 'changeDo', $ticket->id],
-                                                            ['class' => 'btn btn-warning btn-xs fa fa-close']
+                                                            ['class' => 'btn btn-success btn-xs fa fa-check']
                                                         ) ?>
                                                     <?php
                                                     else :
@@ -38,7 +38,7 @@
                                                         <?= $this->Html->link(
                                                             '',
                                                             ['action' => 'changeDo', $ticket->id],
-                                                            ['class' => 'btn btn-success btn-xs fa fa-check']
+                                                            ['class' => 'btn btn-warning btn-xs fa fa-close']
                                                         ) ?>
                                                     <?php
                                                     endif;

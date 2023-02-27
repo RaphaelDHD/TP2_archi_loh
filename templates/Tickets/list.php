@@ -24,14 +24,22 @@
                                                 <span class="task-title-sp"><?= $ticket->title ?></span>
                                                 <span class="badge <?= ($ticket->level <= 4 ? 'bg-theme' : 'bg-warning') ?>"><?= $ticket->level ?></span>
                                                 <div class="pull-right hidden-phone">
-                                                    <?php
-                                                    if ($ticket['done']) :
+                                                <?php
+                                                    if ($ticket->done) :
                                                     ?>
-                                                        <a href="#" class="btn btn-warning btn-xs"><i class=" fa fa-close"></i></a>
+                                                        <?= $this->Html->link(
+                                                            '',
+                                                            ['action' => 'changeDo', $ticket->id],
+                                                            ['class' => 'btn btn-success btn-xs fa fa-check']
+                                                        ) ?>
                                                     <?php
                                                     else :
                                                     ?>
-                                                        <a href="#" class="btn btn-success btn-xs"><i class=" fa fa-check"></i></a>
+                                                        <?= $this->Html->link(
+                                                            '',
+                                                            ['action' => 'changeDo', $ticket->id],
+                                                            ['class' => 'btn btn-warning btn-xs fa fa-close']
+                                                        ) ?>
                                                     <?php
                                                     endif;
                                                     ?>
