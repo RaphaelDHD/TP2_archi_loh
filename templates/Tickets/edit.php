@@ -16,9 +16,11 @@
               echo $this->Form->create($ticket, ['class' => 'form-horizontal style-form']);
               ?>
               <div class="form-group">
-                <?php
-                echo $this->Form->control("title", ['class' => 'form-control', 'label' => 'titre']);
-                ?>
+                <div class="col-sm-10">
+                  <?php
+                  echo $this->Form->control("title", ['class' => 'form-control', 'label' => 'titre']);
+                  ?>
+                </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-10">
@@ -27,7 +29,8 @@
                     'class' => 'form-control', 'type' => 'textarea', 'id' =>  'inputContent', 'label' => [
                       'text' => 'Description complète du ticket',
                       'for' => 'inputContent',
-                      'class' => 'col-sm-2 control-label'
+                      'class' => 'col-sm-2 control-label',
+                      'escapeTitle' => false
                     ]
                   ]);
                   ?> </div>
@@ -41,7 +44,7 @@
                     [
                       'class' => 'form-control',
                       'label' => [
-                        'text' => 'Niveau d\'urgence',
+                        'text' => 'Niveau d urgence',
                         'class' => 'col-sm-2 col-sm-2 control-label'
                       ]
                     ]

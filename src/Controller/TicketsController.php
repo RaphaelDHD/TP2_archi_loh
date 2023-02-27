@@ -11,7 +11,7 @@ class TicketsController extends AppController
         $tickets = $this->Tickets
             ->find()
             ->order(['id' => 'desc'])
-            ->where(['id_users' => $this->request->getSession()->read('Auth.id')])
+//            ->where(['id_users' => $this->request->getSession()->read('Auth.id')])
             ->limit(3)
             ->all();
         $this->set(compact('tickets'));
@@ -63,4 +63,30 @@ class TicketsController extends AppController
     public function view($id)
     {
     }
+
+    public function list(){
+        $tickets = $this->Tickets
+            ->find()
+            ->order(['id' => 'desc'])
+//            ->where(['id_users' => $this->request->getSession()->read('Auth.id')])
+            ->all();
+        $this->set(compact('tickets'));
+    }
+
+    public function changeDo($id){
+        $ticket = $this->Tickets->get($id);
+        if ($ticket->done){
+            $ticket->done = false;
+        }
+        else {
+            $ticket->done = true;
+        }
+        $this->Tickets->save($ticket);  
+        return $this->redirect(['action'
+        => "index"]);
+
+    }
+
+
+
 }
